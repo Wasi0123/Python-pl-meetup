@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Question3</title>
+     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+     <header>
+          <section class="flex">
+               <a href="index.html" class="logo">luxShop</a>
+               <nav class="navbar">
+                    <a href="#" class="link">Home</a>
+                    <a href="#" class="link">About</a>
+                    <a href="#" class="link">Men</a>
+                    <a href="#" class="link">Women</a>
+                    <a href="#" class="link">Contact</a>
+               </nav>
+
+               <form action="" class="search-form">
+                    <input type="text" name="search" id="search">
+                    <button class="fa fa-search"></button>
+               </form>
+
+               <div class="fa fa-cart-plus"></div>
+          </section>
+     </header>
+     <main>
+          <section class="hero">
+
+          </section>
+          <section class="section">
+               <h2>Our products</h2>
+               <div class="underline"></div>
+
+               <div class="product-container">
+                    <h3>Top selling products</h3>
+                    <ul class="has-scrollbar">
+
+                         <li class="scrollbar-item">
+                              <div class="product-image">
+                                   <img src="../images/product-05.jpg" alt="" class="fluid">
+                              </div>
+                              <p class="product-name">Lotion</p>
+                         </li>
+
+                         <li class="scrollbar-item">
+                              <div class="product-image">
+                                   <img src="../images/dress-shirt-img.png" alt="" class="fluid">
+                              </div>
+                              <p class="product-name">Shirt</p>
+                         </li>
+
+                         <li class="scrollbar-item">
+                              <div class="product-image">
+                                   <img src="../images/women-clothes-img.png" alt="" class="fluid">
+                              </div>
+                              <p class="product-name">Gown</p>
+                         </li>
+
+                         <li class="scrollbar-item">
+                              <div class="product-image">
+                                   <img src="../images/tshirt-img.png" alt="" class="fluid">
+                              </div>
+                              <p class="product-name">shirt</p>
+                         </li>
+
+                         <li class="scrollbar-item">
+                              <div class="product-image">
+                                   <img src="../images/sh3.webp" alt="" class="fluid">
+                              </div>
+                              <p class="product-name">Shoe</p>
+                         </li>
+                    </ul>
+               </div>
+          </section>
+
+          <button class="stop-blink">
+               <i class="fa fa-exclamation-circle"></i>
+               Stop blink effect
+          </button>
+     </main>
+
+     <footer>
+          &copy; 2023 luxShop | all rights reserved.
+     </footer>
+
+     <script>
+          const btn = document.querySelector('.stop-blink');
+          const html =  document.documentElement;
+          let x = setInterval(() => {
+               if(html.getAttribute('theme') == "")
+                    html.setAttribute('theme','dark-theme');
+               else 
+                    html.setAttribute('theme', "")
+          }, 700);
+          btn.addEventListener('click', () => {
+               clearInterval(x);
+          })
+     </script>
+</body>
+
+</html>

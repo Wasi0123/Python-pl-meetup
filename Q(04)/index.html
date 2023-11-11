@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Question4</title>
+     <link rel="stylesheet" href="../main.css">
+     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+     <style>
+          section {
+               width: 100%;
+               max-width: 1200px;
+               padding: 40px;
+               margin: auto;
+          }
+
+          .search-form {
+               display: flex;
+               background-color: #fff;
+               border-radius: 5px;
+               padding: 10px;
+               width: 300px;
+               margin: 20px auto;
+          }
+
+          .search-form input {
+               flex-grow: 1;
+               padding-left: 10px;
+               background-color: transparent;
+               color: #000;
+               font-size: 16px;
+          }
+
+          .search-form button {
+               background: none;
+          }
+
+          .response {
+               color: #aaa;
+               text-align: center;
+          }
+
+          .success {
+               color: rgb(19, 245, 87);
+          }
+
+          .error {
+               color: tomato;
+          }
+
+          p {
+               margin-block: 20px;
+          }
+     </style>
+</head>
+
+<body>
+     <header>
+          Question 4
+     </header>
+     <div class="container">
+          <section class="section">
+               <h2>Check how often a word appears.</h2>
+               <p> Nature shows all its vastness and beauty in blue like the ocean. Blue colour and the word can be used to express so many things. Blue is taken as an example to express coldness. It is also associated with the colour of sadness. Like one says when they are sad, ‘I am feeling blue since this morning.’ Blue is also the colour of peace and harmony. Whenever I wear blue coloured clothes I feel beautiful and confident. The colour blue is really soothing for the eyes as well. The Indian national cricket team uniform is blue which is so symbolic of greatness.</p>
+               <article>
+                    I have a pet dog named Bruno. He is brown and furry. He is named after my mother’s favourite singer, Bruno Mars. Bruno came into my life when I was 4 years old. I clearly remember the day when I saw him for the first time. My older brother and I went to the Adoption Centre for Rescued Dogs. Initially, Bruno was very scared of everything around him. With proper care, love and attention Bruno started to be friendly with us. He slowly became energetic and along with it naughty as well. He is very protective of all of us and one day even saved my mother’s bag from being stolen. His loyalty and enthusiasm are what I love the most. I will spend many years in his company full of joy and happiness.
+               </article>
+               <form action="" class="search-form">
+                    <input type="text" name="search" id="search" placeholder="check word count...">
+                    <button type="submit" class="fa fa-search"></button>
+               </form>
+               <p class="response">Result: </p>
+
+          </section>
+
+     </div>
+     <script>
+          const section = document.querySelector('.section');
+          const input = document.querySelector('#search');
+          const form = document.querySelector('.search-form');
+          const result = document.querySelector('.response');
+
+          let text = section.innerText.trim();
+          let newText = "";
+
+          for (let j = 0; j < text.length; j++) {
+               if (!(text[j] == "\n" || text[j] == "\r" || text[j] == "." || text[j] == ",")) {
+                    newText += text[j];
+               }
+          }
+
+          searchText = newText;
+          console.log(newText);
+
+          const findWordOccur = (target) => {
+               let i = 0;
+               let count = 0;
+               while (searchText.length > 0 && i < searchText.length) {
+                    if (searchText[i] === " ") {
+                         word = searchText.slice(0, i);
+                         console.log(word,target);
+                         if (word.toLowerCase() == target.toLowerCase()) {
+                              count++;
+                         }
+
+                         searchText = searchText.slice(i + 1);
+                         i = 0;
+                         
+                    }
+                    i++;
+               }
+
+               result.innerHTML = (count > 0)?`Result: <span class="success">The word ${target} appears ${count}  time(s)</span>`: `Result: <span class="error">The word ${target} does not appear</span>`;
+
+               searchText = newText;
+
+          }
+
+          form.onsubmit = (e) => {
+               e.preventDefault();
+               findWordOccur(input.value)
+          }
+          
+     </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Question8</title>
+     <link rel="stylesheet" href="index.css">
+     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+     <header>
+          <section class="flex">
+               <a href="index.html" class="logo">BuidWeb</a>
+               <nav class="navbar">
+                    <ul>
+                         <li class="dropdown"> 
+                              <a href="#">Features</a>
+                              <ul>
+                                   <li><a href="#">Todo kist</a></li>
+                                   <li><a href="#">Calendar</a></li>
+                                   <li><a href="#">Reminders</a></li>
+                                   <li><a href="#">Planning</a></li>
+                              </ul>
+                         </li>
+                         <li href="#" class="dropdown"> 
+                              <a href="#">Company</a>
+                              <ul>
+                                   <li><a href="#">History</a></li>
+                                   <li><a href="#">Our team</a></li>
+                                   <li><a href="#">Blog</a></li>
+                              </ul>
+                         </li>
+                         <li><a href="#" class="link">Career</a></li>
+                         <li><a href="#" class="link">About</a></li>
+                    </ul>
+               </nav>
+
+               <form action="" class="search-form">
+                    <input type="text" name="search" id="search">
+                    <button class="fa fa-search"></button>
+               </form>
+
+               <div class="fa fa-envelope"></div>
+          </section>
+     </header>
+
+     <script>
+          const dropdown = document.querySelectorAll('.dropdown');
+
+     dropdown.forEach(drop => {
+          drop.addEventListener('mouseenter',(e) => {
+               e.target.classList.add('active');
+          })
+          drop.addEventListener('mouseleave',(e) => {
+               e.target.classList.remove('active');
+          })
+     })
+
+
+     </script>
+</body>
+</html>

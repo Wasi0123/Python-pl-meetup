@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Question 2</title>
+     <link rel="stylesheet" href="../main.css">
+     <style>
+          .time {
+               margin:auto;
+               background-color:pink;
+               max-width: 360px;
+               width: 100%;
+               border-radius: 50px;
+               text-align: center;
+               padding: 30px;
+          }
+
+          .time div {
+               background-color: paleturquoise;
+               padding: 10px;
+               font-size: 20px;
+               margin-bottom: 10px;
+          }
+
+          button {
+               width: 100%;
+               padding: 10px;
+               border-radius: 5px;
+               color: #fff;
+               background-color:plum;
+               font-weight: 600;
+               font-size: 18px;
+          }
+
+          .greeting {
+               font-size: 18px;
+          }
+     </style>
+</head>
+
+<body>
+     <header>
+          <h2>Question 2</h2>
+     </header>
+     <div class="container">
+          <div class="time">
+               <div class="greeting"></div>
+               <div>
+                    <span class="hour"></span>:
+                    <span class="minutes"></span>:
+                    <span class="seconds"></span>
+               </div>
+               <button onclick="showTime()">See time</button>
+          </div>
+     </div>
+     <script>
+          const hours = document.querySelector('.hour');
+          const minutes = document.querySelector('.minutes');
+          const seconds = document.querySelector('.seconds');
+          const greeting = document.querySelector('.greeting');
+
+          function showTime() {
+               let date = new Date();
+               let hour = date.getHours();
+               let minute = date.getMinutes();
+               let second = date.getSeconds();
+
+               hours.innerHTML = hour > 9 ? hour : `0${hour}`;
+               minutes.innerHTML = minute > 9 ? minute : `0${minute}`;
+               seconds.innerHTML = second > 9 ? second : `0${second}`;
+
+               time = (hour * 3600) + (minute * 60) + second
+
+               if (time < (11 * 3600)) {
+                    greeting.innerHTML = "Good Morning ,how is your day";
+               } else if (time < (20 * 3600)) {
+                    greeting.innerHTML = "Good day,hw are u";
+               } else {
+                    greeting.innerHTML = "Good Evening,hw are u";
+               }
+          }
+     </script>
+</body>
+
+</html>

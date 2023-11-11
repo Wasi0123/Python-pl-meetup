@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Question5</title>
+     <link rel="stylesheet" href="../main.css">
+     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+     <style>
+          .btn {
+               width: max-content;
+               padding: 10px 20px;
+               font-size: 16px;
+               background-color: #222;
+               color: #fff;
+               border-radius: 5px;
+          }
+
+          input {
+               display: block;
+               background-color: #ececec;
+               margin-block-start: 10px;
+               padding: 10px;
+               font-size: 16px;
+               border-radius: 5px;
+               width: 100%;
+          }
+
+          .container div {
+               width: 100%;
+               max-width: 420px;
+               margin: auto;
+               background: #fff;
+               padding: 30px;
+          }
+     </style>
+</head>
+
+<body>
+     <header>
+          <h2>Question5</h2>
+     </header>
+
+     <div class="container">
+          <div>
+               <p class="message"></p>
+               <button class="btn">Welcome!</button>
+               <form action="">
+                    <input type="text" name="" id="" role="button">
+                    <input type="text" name="" id="" role="button">
+                    <input type="text" name="" id="" role="button">
+                    <input type="text" name="" id="" role="button">
+                    <input type="text" name="" id="" role="button">
+                    <input type="text" name="" id="" role="button">
+               </form>
+          </div>
+     </div>
+     <script>
+          const inputs = document.querySelectorAll('input[type=text]');
+          const message = document.querySelector('.message');
+          document.querySelector('.btn').onclick = () => {
+               message.innerHTML = (message.innerHTML === '') ? 'Hello welcome!' : '';
+          }
+          inputs.forEach(input => {
+               input.addEventListener('click', () => {
+                    let colorValue =input.style.backgroundColor;
+
+                    if (colorValue === 'red') {
+                        input.style.backgroundColor = '#ececec';
+                    } else {
+                        input.style.backgroundColor = 'red';
+                    }
+               })
+          })
+     </script>
+     </this>
+
+</html>

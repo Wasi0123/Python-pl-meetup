@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Question one</title>
+     <link rel="stylesheet" href="../main.css">
+     <style>
+          form {
+               display: block;
+               margin: auto;
+               background-color:palegoldenrod;
+               max-width: 420px;
+               width: 100%;
+               padding: 30px;
+               border-radius: 10px;
+          }
+
+          input , button {
+               display: block;
+               width: 100%;
+               padding: 10px;
+               font-size: 18px;
+               border-radius: 5px;
+               margin-bottom: 10px;
+          }
+     
+          input {
+               background-color: #ececec;
+          }
+
+          button {
+               background-color:powderblue;
+               color: #fff;
+               font-weight: 600;
+          }
+
+          p {
+               color: #aaa;
+               margin-bottom: 10px;
+          }
+
+          p span {
+               color: powderblue;
+          }
+
+          .text {
+               color: rgb(23, 231, 96);
+          }
+
+     </style>
+</head>
+<body>
+     <header>
+          <h2>Question 1</h2>
+     </header>
+     <div class="container">
+          <form action="" class="form">
+               <p>Enter your name <span>*</span></p>
+               <input type="text" name="name" id="name">
+               <button type="submit">Render Message</button>
+               <p class="message">Message: </p>
+          </form>
+     </div>
+
+     <script>
+          const message = document.querySelector('.message');
+          const name = document.getElementById('name');
+          const form = document.querySelector('.form');
+
+          form.onsubmit = (e) => {
+               e.preventDefault();
+               if(name.value.length <= 3) {
+                    message.innerHTML = ` Message: <span class="error"> name length must be greater than 3</span>`;
+               } else {
+                    message.innerHTML = ` Message: <span class="text">Hello ${name.value}. Nice to meet you! </span>`;
+                    name.value = "";
+               }
+          }
+     </script>
+</body>
+</html>

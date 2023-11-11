@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Question7</title>
+     <link rel="stylesheet" href="../main.css">
+     <style>
+          form {
+               display: block;
+               margin: auto;
+               background-color: #fff;
+               max-width: 420px;
+               width: 100%;
+               padding: 30px;
+               border-radius: 10px;
+          }
+
+          p {
+               margin-bottom: 10px;
+          }
+
+          textarea , button {
+               display: block;
+               width: 100%;
+               padding: 10px;
+               font-size: 18px;
+               border-radius: 5px;
+               margin-bottom: 10px;
+          }
+     
+          textarea {
+               background-color: #ececec;
+          }
+
+          button {
+               background-color: tomato;
+               color: #fff;
+               font-weight: 600;
+          }
+
+          .progress {
+               width: 100%;
+               padding: 2px;
+               border:  1px solid rgb(89, 231, 112);
+               border-radius: 5px;
+               margin-bottom: 10px;
+          }
+          .bar {
+               height: 5px;
+               background-color:rgb(89, 231, 112);
+               width: 0;
+               transition: .2s linear;
+          }
+
+          .count, .show-progress {
+               display: inline-block;
+               width: 50%;
+               margin: 0;
+               color: #aaa;
+               font-weight: 600;
+          }
+
+          .show-progress {
+               text-align: right;
+          }
+     </style>
+</head>
+<body>
+     <header>
+          <h2>Question 1</h2>
+     </header>
+     <div class="container">
+          <form action="" class="form">
+               <p>Enter text<span>*</span></p>
+               <textarea name="text" id="text" cols="30" rows="10" maxlength="200"></textarea>
+               <button type="submit">Render Message</button>
+              <div class="progress">
+                    <div class="bar"></div>
+              </div>
+              <p class="count">Length of text: </p><div class="show-progress"></div>
+          </form>
+     </div>
+
+     <script>
+          const count = document.querySelector('.count');
+          const text = document.getElementById('text');
+          const form = document.querySelector('.form');
+          const progressBar = document.querySelector('.bar');
+          const showProgress = document.querySelector('.show-progress');
+
+          let length = 0;
+          let maxLength = text.getAttribute('maxlength');
+
+          showProgress.innerHTML = `${length}\\${maxLength}`;
+
+          text.addEventListener('keyup', function (e) {
+               let length = e.target.value.length;
+               let maxLength = text.getAttribute('maxlength');
+               let width = (length / maxLength) * 100;
+               progressBar.style.width = `${width}%`
+               showProgress.innerHTML = `${length}\\${maxLength}`;
+          })
+          form.onsubmit = (e) => {
+               e.preventDefault();
+               if(text.value.length >= 1) {
+                    count.innerHTML = `Length of text: ${text.value.length}`;
+               }
+          }
+     </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     outline: none;
+     border: 0;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+     height: 100vh;
+     background-color: #ececec;
+     overflow: hidden;
+}
+
+header {
+     background-color: #222;
+     color: #fff;
+     text-align: center;
+     height: 8vh;
+     line-height: 8vh;
+}
+
+.container {
+     display: flex;
+     height: 80vh;
+}
+
